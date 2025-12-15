@@ -1,0 +1,18 @@
+@if (books().length > 0) {
+  <ul class="list">
+    @for (book of books(); track book.id) {
+      <li>
+        <strong>{{ book.title }}</strong>
+
+        @if (book.author; as author) {
+          <small> — {{ author }}</small>
+        }
+
+        <br>
+        <button (click)="onBorrow(book)">Wypożycz</button>
+      </li>
+    }
+  </ul>
+} @else {
+  <div class="notification">Brak dostępnych książek.</div>
+}

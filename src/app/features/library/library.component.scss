@@ -1,0 +1,17 @@
+.container {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 12px;
+  flex: 1;
+}

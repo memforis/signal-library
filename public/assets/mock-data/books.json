@@ -1,0 +1,8 @@
+[
+  { "id": 5, "title": "Clean Code", "author": "Robert C. Martin" },
+  { "id": 6, "title": "The Pragmatic Programmer", "author": "Andrew Hunt" },
+  { "id": 7, "title": "You Don't Know JS", "author": "Kyle Simpson" },
+  { "id": 8, "title": "The Hobbit", "author": "J.R.R. Tolkien" },
+  { "id": 9, "title": "Dune", "author": "Frank Herbert" },
+  { "id": 10, "title": "1984", "author": "George Orwell" }
+]

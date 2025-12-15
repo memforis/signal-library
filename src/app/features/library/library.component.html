@@ -1,0 +1,45 @@
+<main class="container">
+  <h1>Biblioteka</h1>
+  <sl-error-message></sl-error-message>
+
+  <section class="content">
+    <div class="column">
+      <h2>Klienci</h2>
+
+      @if (!clientStore.isLoading()) {
+        <sl-client-select
+          [clients]="clientStore.clients()"
+          [selectedId]="clientStore.selectedClientId()"
+          (select)="onClientSelect($event)"
+        ></sl-client-select>
+      } @else {
+        <div class="notification">Ładowanie klientów...</div>
+      }
+    </div>
+
+    <div class="column">
+      <h2>Dostępne książki</h2>
+
+      @if (!bookStore.isLoading()) {
+        <sl-book-list
+          [books]="bookStore.books()"
+          (borrow)="onBookBorrow($event)"
+        ></sl-book-list>
+      } @else {
+        <div class="notification">Ładowanie książek...</div>
+      }
+    </div>
+
+    @if (clientStore.selectedClientId()) {
+      <div class="column">
+        <h2>Wypożyczone książki</h2>
+
+        @if (clientStore.selectedClientId()) {
+          <sl-borrowed-list [books]="clientStore.borrowedBooks()"></sl-borrowed-list>
+        } @else {
+          <div class="notification">Wybierz klienta.</div>
+        }
+      </div>
+    }
+  </section>
+</main>

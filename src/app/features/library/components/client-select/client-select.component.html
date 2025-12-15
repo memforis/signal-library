@@ -1,0 +1,11 @@
+<select
+  [value]="selectedId()"
+  (change)="onClientChange($event)"
+>
+  <option value="0">—</option>
+  @for (client of clients(); track client.id) {
+    <option [value]="client.id">{{ client.name }}</option>
+  } @empty {
+    <option disabled>Brak klientów</option>
+  }
+</select>
